@@ -19,10 +19,14 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "../node_modules/a01/jquery-ui-1.10.2.custom.css",
+        "../node_modules/a01/primitives.latest.css"
       ],
       "scripts": [
-        "../node_modules/jquery/dist/jquery.min.js"
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/a01/jquery-ui-1.10.2.custom.min.js",
+        "../node_modules/a01/primitives.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
