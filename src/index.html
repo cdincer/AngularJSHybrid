@@ -20,11 +20,10 @@
   var options = new primitives.famdiagram.Config();
   
               var items = [
-                  { id: 1, spouses: [2], title: "Thomas Williams", label: "Thomas Williams", description: "1, 1st husband", image: "" },
-                  { id: 2, title: "Mary Spencer", label: "Mary Spencer", description: "2, The Mary",image: "" },
-                  { id: 3, spouses: [2], title: "David Kirby", label: "David Kirby", description: "3, 2nd Husband", image: "" },
-                  { id: 4, parents: [1, 2], title: "Brad Williams", label: "Brad Williams", description: "4, 1st son", image: "" },
-                  { id: 5, parents: [2, 3], title: "Mike Kirby", label: "Mike Kirby", description: "5, 2nd son, having 2 spouses", image: ""}
+                  { id: 1, title: "Thomas Williams", label: "General Manager", description: "General Manager", image: "" },
+                 { id: 4, parents: [1, 2], title: "Brad Williams", label: "Brad Williams", description: "Vice President", image: "" },
+                  { id: 5, parents: [4, 1], title: "Mike Kirby", label: "Mike Kirby", description: "Area Manager", image: ""},
+                  {id: 6, parents: [ 1,5], title: "Underling of Mike Kirby", label: "", description: "Area Manager", image: ""}
               ];
   
               options.items = items;
@@ -42,9 +41,48 @@
               $("#basicdiagram").famDiagram(options);
 
 }
+</script>
+
+<script>
+function additem()
+{
+  var options = new primitives.famdiagram.Config();
+
+  var items2 = [
+  { id: 1, title: "Thomas Williams", label: "General Manager", description: "General Manager", image: "" },
+ { id: 4, parents: [1, 2], title: "Brad Williams", label: "Brad Williams", description: "Vice President", image: "" },
+  { id: 5, parents: [4, 1], title: "Mike Kirby", label: "Mike Kirby", description: "Area Manager", image: ""},
+  {id: 6, parents: [ 1,5], title: "Underling of Mike Kirby", label: "", description: "Area Manager", image: ""}
+];
+
+items2.push({id:7, parents:[1, 2],title:"New one added.", label: "General Manager", description: "General Manager", image: "" });
+
+options.items = items2;
+              options.cursorItem = 2;
+              options.linesWidth = 1;
+              options.linesColor = "black";
+              options.hasSelectorCheckbox = primitives.common.Enabled.False;
+              options.normalLevelShift = 20;
+              options.dotLevelShift = 20;
+              options.lineLevelShift = 20;
+              options.normalItemsInterval = 10;
+              options.dotItemsInterval = 10;
+              options.lineItemsInterval = 10;
+  
+              $("#basicdiagram").famDiagram(options);
+
+}
 
 
 </script>
+
   <button type="button" onclick="myFunction2()">Initliaze Button</button>
+
+  
+
+
+  
+  <button type="button" onclick="additem()">New Array Tester Type of deal. Button</button>
+  
 </body>
 </html>
