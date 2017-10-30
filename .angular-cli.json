@@ -26,7 +26,8 @@
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",
         "../node_modules/a01/jquery-ui-1.10.2.custom.min.js",
-        "../node_modules/a01/primitives.min.js"
+        "../node_modules/a01/primitives.min.js",
+        "../demo/angularjs/angular.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
