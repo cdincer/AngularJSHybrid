@@ -4,9 +4,38 @@
   <meta charset="utf-8">
   <title>Jqueryconv</title>
   <base href="/">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <title>The very first family chart</title>
+      <script >//<![CDATA[ 
+        console.log('before shit storm');
+          $(window).load(function () {
+              var options = new primitives.famdiagram.Config();
+  
+              var items = [
+                  { id: 1, spouses: [2], title: "Thomas Williams", label: "Thomas Williams", description: "1, 1st husband", image: "demo/images/photos/t.png" },
+                  { id: 2, title: "Mary Spencer", label: "Mary Spencer", description: "2, The Mary",image: "demo/images/photos/m.png" },
+                  { id: 3, spouses: [2], title: "David Kirby", label: "David Kirby", description: "3, 2nd Husband", image: "demo/images/photos/d.png" },
+                  { id: 4, parents: [1, 2], title: "Brad Williams", label: "Brad Williams", description: "4, 1st son", image: "demo/images/photos/b.png" },
+                  { id: 5, parents: [2, 3], title: "Mike Kirby", label: "Mike Kirby", description: "5, 2nd son, having 2 spouses", image: "demo/images/photos/m.png"}
+              ];
+  
+              options.items = items;
+              options.cursorItem = 2;
+              options.linesWidth = 1;
+              options.linesColor = "black";
+              options.hasSelectorCheckbox = primitives.common.Enabled.False;
+              options.normalLevelShift = 20;
+              options.dotLevelShift = 20;
+              options.lineLevelShift = 20;
+              options.normalItemsInterval = 10;
+              options.dotItemsInterval = 10;
+              options.lineItemsInterval = 10;
+  
+              $("#basicdiagram").famDiagram(options);
+          });//]]>  
+  
+      </script>
 </head>
 <body>
     <!-- <script
@@ -14,6 +43,56 @@
     integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
     crossorigin="anonymous"></script> -->
   <app-root></app-root>
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "Paragraph changed.";
+    }
+    </script>
+<script>
+          function myFunction2()
+{
+
+  var options = new primitives.famdiagram.Config();
+  
+              var items = [
+                  { id: 1, spouses: [2], title: "Thomas Williams", label: "Thomas Williams", description: "1, 1st husband", image: "demo/images/photos/t.png" },
+                  { id: 2, title: "Mary Spencer", label: "Mary Spencer", description: "2, The Mary",image: "demo/images/photos/m.png" },
+                  { id: 3, spouses: [2], title: "David Kirby", label: "David Kirby", description: "3, 2nd Husband", image: "demo/images/photos/d.png" },
+                  { id: 4, parents: [1, 2], title: "Brad Williams", label: "Brad Williams", description: "4, 1st son", image: "demo/images/photos/b.png" },
+                  { id: 5, parents: [2, 3], title: "Mike Kirby", label: "Mike Kirby", description: "5, 2nd son, having 2 spouses", image: "demo/images/photos/m.png"}
+              ];
+  
+              options.items = items;
+              options.cursorItem = 2;
+              options.linesWidth = 1;
+              options.linesColor = "black";
+              options.hasSelectorCheckbox = primitives.common.Enabled.False;
+              options.normalLevelShift = 20;
+              options.dotLevelShift = 20;
+              options.lineLevelShift = 20;
+              options.normalItemsInterval = 10;
+              options.dotItemsInterval = 10;
+              options.lineItemsInterval = 10;
+  
+              $("#basicdiagram").famDiagram(options);
+
+}
+
+
+</script>
+
+
+
+
   <button>Jquery Button</button>
+  <p id="demo">A Paragraph.</p>
+  <button type="button" onclick="myFunction()">Try it</button>
+  
+
+
+
+  
+  <p id="demo2">A Paragraph.</p>
+  <button type="button" onclick="myFunction2()">Initliaze Button</button>
 </body>
 </html>
