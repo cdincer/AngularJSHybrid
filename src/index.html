@@ -19,17 +19,18 @@
   
 <script>
   var globalconsole='123123';
+  var items = [
+                  { id: 1, title: "Thomas Williams", label: "General Manager", description: "General Manager", image: "" },
+                 { id: 4, parents: [1, 2], title: "Brad Williams", label: "Brad Williams", description: "Vice President", image: "" },
+                  { id: 5, parents: [4, 1], title: "Mike Kirby", label: "Mike Kirby", description: "Area Manager", image: ""},
+                  {id: 6, parents: [ 1,5], title: "Underling of Mike Kirby", label: "", description: "Area Manager", image: ""}
+              ]; //Our main repository of people.
           function myFunction2()
 {
 
   var options = new primitives.famdiagram.Config();
   
-              var items = [
-                  { id: 1, title: "Thomas Williams", label: "General Manager", description: "General Manager", image: "" },
-                 { id: 4, parents: [1, 2], title: "Brad Williams", label: "Brad Williams", description: "Vice President", image: "" },
-                  { id: 5, parents: [4, 1], title: "Mike Kirby", label: "Mike Kirby", description: "Area Manager", image: ""},
-                  {id: 6, parents: [ 1,5], title: "Underling of Mike Kirby", label: "", description: "Area Manager", image: ""}
-              ];
+            
   
               options.items = items;
               options.cursorItem = 2;
@@ -56,12 +57,7 @@ function additem() //This is for testing form adding. Not for anything else. The
 
   var options = new primitives.famdiagram.Config();
 
-  var items2 = [
-  { id: 1, title: "Thomas Williams", label: "General Manager", description: "General Manager", image: "" },
- { id: 4, parents: [1, 2], title: "Brad Williams", label: "Brad Williams", description: "Vice President", image: "" },
-  { id: 5, parents: [4, 1], title: "Mike Kirby", label: "Mike Kirby", description: "Area Manager", image: ""},
-  {id: 6, parents: [ 1,5], title: "Underling of Mike Kirby", label: "", description: "Area Manager", image: ""}
-];
+  var items2 = items;
 
 var IDvar;
 IDvar =frm1.elements["IDname"].value; //How to take values from a form.
