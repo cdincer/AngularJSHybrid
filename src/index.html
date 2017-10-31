@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <title>The very first family chart</title>
-  
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 </head>
 <body>
 
@@ -63,7 +64,14 @@ var x = document.getElementById("frm1");
   {id: 6, parents: [ 1,5], title: "Underling of Mike Kirby", label: "", description: "Area Manager", image: ""}
 ];
 
-items2.push({id:7, parents:[1, 2],spouse:[],title:"New one added.", label: "General Manager", description: "General Manager", image: "" }); //Form'dan özellik alması için.
+var IDvar;
+IDvar =frm1.elements["IDname"].value; //How to take values from a form.
+Parvar=frm1.elements["Parentsname"].value;
+Spovar=frm1.elements["Spousename"].value;
+Titvar=frm1.elements["Titlename"].value;
+Descvar=frm1.elements["Descriptionname"].value;
+console.log(IDvar);
+items2.push({id:IDvar, parents:[Parvar],spouse:[Spovar],title:[Titvar], label: "", description: Descvar, image: "" }); //Form'dan özellik alması için.
 
               options.items = items2;
               options.cursorItem = 2;
@@ -78,9 +86,7 @@ items2.push({id:7, parents:[1, 2],spouse:[],title:"New one added.", label: "Gene
               options.lineItemsInterval = 10;
   
               $("#basicdiagram").famDiagram(options);
-var consoletester;
-consoletester =frm1.elements["IDname"].value;
-console.log(consoletester);
+
 }
 
 
@@ -93,10 +99,10 @@ console.log(consoletester);
 
   <form id="frm1" action="">
     ID: <input type="text" name="IDname" placeholder="Enter a unique ID"><br>
-    Parents: <input type="text" name="Parentsname" placeholder="Optional field"><br>    
+    Parents: <input type="text" name="Parentsname" placeholder="Optional field"><br>
+    Spouse: <input type="text" name="Spousename" placeholder="Optional field"><br>        
     Title: <input type="text" name="Titlename" placeholder="Enter a title"><br>
     Description: <input type="text" name="Descriptionname" placeholder="Enter a description"><br>
-    <input type="submit" value="Submit">
   </form> 
 
 
