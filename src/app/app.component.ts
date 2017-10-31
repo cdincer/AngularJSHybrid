@@ -21,7 +21,7 @@ export class AppComponent implements OnInit,AfterViewInit {
   ngAfterViewInit()
   {
     $( 'button' ).click(function() {
-      alert( "Handler for .click() called." );
+      alert( "Initializing chart" );
     });
 
    

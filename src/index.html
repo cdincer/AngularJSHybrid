@@ -13,7 +13,10 @@
 <body>
 
   <app-root></app-root>
-
+  <br>
+  <br>
+  <br>
+  
 <script>
           function myFunction2()
 {
@@ -89,15 +92,20 @@ items2.push({id:IDvar, parents:[Parvar],spouse:[Spovar],title:[Titvar], label: "
   
 
 
-  <form id="frm1" action="">
-    ID: <input type="text" name="IDname" placeholder="Enter a unique ID"><br>
-    Parents: <input type="text" name="Parentsname" placeholder="Optional field"><br>
-    Spouse: <input type="text" name="Spousename" placeholder="Optional field"><br>        
-    Title: <input type="text" name="Titlename" placeholder="Enter a title"><br>
-    Description: <input type="text" name="Descriptionname" placeholder="Enter a description"><br>
-    <button type="button" onclick="myFunction2()">Initliaze Button</button>
-    <button type="button" onclick="additem()">Add A New Member </button>
+  <form class="form-horizontal"id="frm1" action="">
+      <div class="col-md-4">          
+    ID: <input type="text" name="IDname" class="form-control input-md"placeholder="Enter a unique ID"><br>
+    Parents:<input type="text" name="Parentsname" class="form-control input-md"placeholder="Optional field"><br>
     
+    Parents: <input type="text" name="Parentsname" class="form-control input-md" placeholder="Optional field"><br>
+    Spouse: <input type="text" name="Spousename" class="form-control input-md" placeholder="Optional field"><br>        
+    Title: <input type="text" name="Titlename" class="form-control input-md" placeholder="Enter a title"><br>
+    Description: <input type="text" name="Descriptionname" class="form-control input-md"placeholder="Enter a description">
+  </div>
+  <br>
+    <button type="button" class="form-control input-md" onclick="myFunction2()">Initliaze Button</button>
+    <button type="button" class="form-control input-md" onclick="additem()">Add A New Member </button>
+ 
   </form> 
   
 </body>
