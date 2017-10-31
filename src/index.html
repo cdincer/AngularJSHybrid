@@ -16,7 +16,7 @@
   <br>
   <br>
   
-<script>
+<script> //Our main iniator.
   var globalconsole='123123';
   var items = [
                   { id: 1, title: "Thomas Williams", label: "General Manager", description: "General Manager", image: "" },
@@ -49,10 +49,10 @@
 </script>
 
 <script>
-function additem() //This is for testing form adding. Not for anything else. There is nothing in here thats is important or unique. 
-{                 //Array pusing example in the notepad too. Just use this one for getting values the form.
+function additem() //Main item adder.
+{                 
 
-//We need to declare a array variable here. This one just has a weird string and it won't let us access to anything.
+
 
   var options = new primitives.famdiagram.Config();
 
@@ -93,8 +93,6 @@ items2.push({id:IDvar, parents:[Parvar],spouse:[Spovar],title:[Titvar], label: "
       <div class="col-md-4">          
     ID: <input type="text" name="IDname" class="form-control input-md"placeholder="Enter a unique ID"><br>
     Parents:<input type="text" name="Parentsname" class="form-control input-md"placeholder="Optional field"><br>
-    
-    Parents: <input type="text" name="Parentsname" class="form-control input-md" placeholder="Optional field"><br>
     Spouse: <input type="text" name="Spousename" class="form-control input-md" placeholder="Optional field"><br>        
     Title: <input type="text" name="Titlename" class="form-control input-md" placeholder="Enter a title"><br>
     Description: <input type="text" name="Descriptionname" class="form-control input-md"placeholder="Enter a description">
