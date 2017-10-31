@@ -19,10 +19,10 @@
 <script> //Our main iniator.
   var globalconsole='123123';
   var items = [
-                  { id: 1, title: "Thomas Williams", label: "General Manager", description: "General Manager", image: "" },
-                 { id: 4, parents: [1, 2], title: "Brad Williams", label: "Brad Williams", description: "Vice President", image: "" },
-                  { id: 5, parents: [4, 1], title: "Mike Kirby", label: "Mike Kirby", description: "Area Manager", image: ""},
-                  {id: 6, parents: [ 1,5], title: "Underling of Mike Kirby", label: "", description: "Area Manager", image: ""}
+                  { id: 1, title: "Thomas Williams", label: "General Manager", description: "General Manager Personel ID:1", image: "" },
+                 { id: 4, parents: [1, 2], title: "Brad Williams", label: "Brad Williams", description: "Vice President Personel ID:4", image: "" },
+                  { id: 5, parents: [4, 1], title: "Mike Kirby", label: "Mike Kirby", description: "Area Manager  Personel ID:5", image: ""},
+                  {id: 6, parents: [ 1,5], title: "Underling of Mike Kirby", label: "", description: "Area Manager  Personel ID:6", image: ""}
               ]; //Our main repository of people.
           function myFunction2()
 {
@@ -65,7 +65,8 @@ Spovar=frm1.elements["Spousename"].value;
 Titvar=frm1.elements["Titlename"].value;
 Descvar=frm1.elements["Descriptionname"].value;
 console.log(IDvar);
-items2.push({id:IDvar, parents:[Parvar],spouse:[Spovar],title:[Titvar], label: "", description: Descvar, image: "" }); //Form'dan özellik alması için.
+
+items2.push({id:IDvar, parents:[Parvar],spouse:[Spovar],title:[Titvar], label: "", description: Descvar +" Personel ID:"+ IDvar, image: "" }); //Form'dan özellik alması için.
 
               options.items = items2;
               options.cursorItem = 2;
@@ -104,13 +105,14 @@ items2.push({id:IDvar, parents:[Parvar],spouse:[Spovar],title:[Titvar], label: "
         {
          if(Titvar==items2[i].title)   
           {
+            IDvar = items2[i].id;
             console.log(items2[i]);
             items2.splice(i);
             
           }
         }
 
-    items2.push({id:IDvar, parents:[Parvar],spouse:[Spovar],title:[Titvar], label: "", description: Descvar, image: "" }); //Form'dan özellik alması için.
+    items2.push({id:IDvar, parents:[Parvar],spouse:[Spovar],title:[Titvar], label: "", description: Descvar +" Personel ID:"+ IDvar, image: "" }); //Form'dan özellik alması için.
     
                   options.items = items2;
                   options.cursorItem = 2;
@@ -135,8 +137,8 @@ items2.push({id:IDvar, parents:[Parvar],spouse:[Spovar],title:[Titvar], label: "
   <form class="form-horizontal"id="frm1" action="">
       <div class="col-md-4">          
     ID: <input type="text" name="IDname" class="form-control input-md"placeholder="Enter a unique ID"><br>
-    Parents:<input type="text" name="Parentsname" class="form-control input-md"placeholder="Optional field"><br>
-    Spouse: <input type="text" name="Spousename" class="form-control input-md" placeholder="Optional field"><br>        
+    Superiors:<input type="text" name="Parentsname" class="form-control input-md"placeholder="Optional field"><br>
+    Equals: <input type="text" name="Spousename" class="form-control input-md" placeholder="Optional field"><br>        
     Title: <input type="text" name="Titlename" class="form-control input-md" placeholder="Enter a title"><br>
     Description: <input type="text" name="Descriptionname" class="form-control input-md"placeholder="Enter a description">
   </div>
