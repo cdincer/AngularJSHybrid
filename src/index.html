@@ -18,6 +18,7 @@
   <br>
   
 <script>
+  var globalconsole='123123';
           function myFunction2()
 {
 
@@ -41,7 +42,7 @@
               options.normalItemsInterval = 10;
               options.dotItemsInterval = 10;
               options.lineItemsInterval = 10;
-  
+              console.log(globalconsole);
               $("#basicdiagram").famDiagram(options);
 
 }
@@ -82,7 +83,8 @@ items2.push({id:IDvar, parents:[Parvar],spouse:[Spovar],title:[Titvar], label: "
               options.normalItemsInterval = 10;
               options.dotItemsInterval = 10;
               options.lineItemsInterval = 10;
-  
+              console.log(globalconsole);
+
               $("#basicdiagram").famDiagram(options);
 
 }
