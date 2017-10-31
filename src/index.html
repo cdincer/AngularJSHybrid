@@ -85,6 +85,49 @@ items2.push({id:IDvar, parents:[Parvar],spouse:[Spovar],title:[Titvar], label: "
 }
 </script>
 
+<script>
+    function additem2() //Item Updater.
+    {                 
+    
+    
+      var options = new primitives.famdiagram.Config();
+    
+      var items2 = items;
+   //How to take values from a form.
+   IDvar =frm1.elements["IDname"].value; //How to take values from a form.
+   Parvar=frm1.elements["Parentsname"].value;
+   Spovar=frm1.elements["Spousename"].value;
+   Titvar=frm1.elements["Titlename"].value;
+   Descvar=frm1.elements["Descriptionname"].value;
+
+        for(var i=0, len=items2.length; i<len;i++) //Looping through the array to find a match.
+        {
+         if(Titvar==items2[i].title)   
+          {
+            console.log(items2[i]);
+            items2.splice(i);
+            
+          }
+        }
+
+    items2.push({id:IDvar, parents:[Parvar],spouse:[Spovar],title:[Titvar], label: "", description: Descvar, image: "" }); //Form'dan özellik alması için.
+    
+                  options.items = items2;
+                  options.cursorItem = 2;
+                  options.linesWidth = 1;
+                  options.linesColor = "black";
+                  options.hasSelectorCheckbox = primitives.common.Enabled.False;
+                  options.normalLevelShift = 20;
+                  options.dotLevelShift = 20;
+                  options.lineLevelShift = 20;
+                  options.normalItemsInterval = 10;
+                  options.dotItemsInterval = 10;
+                  options.lineItemsInterval = 10;   
+                  $("#basicdiagram").famDiagram(options);
+
+    
+    }
+    </script>
 
   
 
@@ -100,7 +143,8 @@ items2.push({id:IDvar, parents:[Parvar],spouse:[Spovar],title:[Titvar], label: "
   <br>
     <button type="button" class="form-control input-md" onclick="myFunction2()">Initliaze Button</button>
     <button type="button" class="form-control input-md" onclick="additem()">Add A New Member </button>
- 
+    <button type="button" class="form-control input-md" onclick="additem2()">Update A Member </button>
+    
   </form> 
   
 </body>
