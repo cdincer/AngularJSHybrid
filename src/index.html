@@ -49,12 +49,7 @@ function additem() //This is for testing form adding. Not for anything else. The
 {                 //Array pusing example in the notepad too. Just use this one for getting values the form.
 
 //We need to declare a array variable here. This one just has a weird string and it won't let us access to anything.
-var x = document.getElementById("frm1");
-    var text = "";
-    var i;
-    for (i = 0; i < x.length ;i++) {
-        text += x.elements[i].value + "<br>";
-    }
+
   var options = new primitives.famdiagram.Config();
 
   var items2 = [
@@ -88,11 +83,8 @@ items2.push({id:IDvar, parents:[Parvar],spouse:[Spovar],title:[Titvar], label: "
               $("#basicdiagram").famDiagram(options);
 
 }
-
-
 </script>
 
-  <button type="button" onclick="myFunction2()">Initliaze Button</button>
 
   
 
@@ -103,11 +95,10 @@ items2.push({id:IDvar, parents:[Parvar],spouse:[Spovar],title:[Titvar], label: "
     Spouse: <input type="text" name="Spousename" placeholder="Optional field"><br>        
     Title: <input type="text" name="Titlename" placeholder="Enter a title"><br>
     Description: <input type="text" name="Descriptionname" placeholder="Enter a description"><br>
+    <button type="button" onclick="myFunction2()">Initliaze Button</button>
+    <button type="button" onclick="additem()">Add A New Member </button>
+    
   </form> 
-
-
-  
-  <button type="button" onclick="additem()">New Array Tester Type of deal. Button</button>
   
 </body>
 </html>
