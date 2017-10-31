@@ -1,3 +1,19 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div id="basicdiagram" style="width: 1920px; height: 1080px; border-style: dotted; border-width: 1px;" >
 </div>
+
+You can see Angular powered Bootstrap features below. This is just a simple accordion to show. 
+We take full advantage of Angular Powered Strap and not just importing styles.
+<ngb-accordion #acc="ngbAccordion" activeIds="">
+        <ngb-panel title="Click on me to see a accordion.">
+          <ng-template ngbPanelContent>
+         Source for these accordions is...(Click on other accordion to see it.)
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel title="Click on me to see a another accordion.">
+                <ng-template ngbPanelContent>
+                        https://ng-bootstrap.github.io/#/components/accordion/examples
+                </ng-template>
+              </ngb-panel>
+
+      </ngb-accordion>
