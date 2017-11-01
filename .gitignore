@@ -8,7 +8,6 @@
 # dependencies
 /node_modules
 
-!/node_modules/a01
 
 # IDEs and editors
 /.idea
