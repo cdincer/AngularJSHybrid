@@ -28,7 +28,8 @@
 
   var options = new primitives.famdiagram.Config();
   
-            
+         
+              options.arrowsDirection = primitives.common.GroupByType.Parents;
               options.items = items;
               options.cursorItem = 2;
               options.linesWidth = 1;
@@ -73,6 +74,7 @@ console.log(items[1].parents);
 
 items2.push({id:IDvar, parents:array,spouse:[Spovar],title:[Titvar], label: "", description: Descvar +" Personel ID:"+ IDvar, image: "" }); //Form'dan özellik alması için.
 
+              options.arrowsDirection = primitives.common.GroupByType.Parents;
               options.items = items2;
               options.cursorItem = 2;
               options.linesWidth = 1;
@@ -104,6 +106,7 @@ items2.push({id:IDvar, parents:array,spouse:[Spovar],title:[Titvar], label: "", 
    Spovar=frm1.elements["Spousename"].value;
    Titvar=frm1.elements["Titlename"].value;
    Descvar=frm1.elements["Descriptionname"].value;
+   var array = JSON.parse("["+ Parvar +"]"); //We convert to array here.
 
         for(var i=0, len=items2.length; i<len;i++) //Looping through the array to find a match.
         {
@@ -116,8 +119,10 @@ items2.push({id:IDvar, parents:array,spouse:[Spovar],title:[Titvar], label: "", 
           }
         }
 
-    items2.push({id:IDvar, parents:[Parvar],spouse:[Spovar],title:[Titvar], label: "", description: Descvar +" Personel ID:"+ IDvar, image: "" }); //Form'dan özellik alması için.
-    
+        items2.push({id:IDvar, parents:array,spouse:[Spovar],title:[Titvar], label: "", description: Descvar +" Personel ID:"+ IDvar, image: "" }); //Form'dan özellik alması için.
+
+        
+                  options.arrowsDirection = primitives.common.GroupByType.Parents;
                   options.items = items2;
                   options.cursorItem = 2;
                   options.linesWidth = 1;
