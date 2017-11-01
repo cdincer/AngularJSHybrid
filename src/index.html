@@ -17,7 +17,6 @@
   <br>
   
 <script> //Our main iniator.
-  var globalconsole='123123';
   var items = [
                   { id: 1, title: "Thomas Williams", label: "General Manager", description: "General Manager Personel ID:1", image: "" },
                  { id: 4, parents: [1, 2], title: "Brad Williams", label: "Brad Williams", description: "Vice President Personel ID:4", image: "" },
@@ -30,7 +29,6 @@
   var options = new primitives.famdiagram.Config();
   
             
-  
               options.items = items;
               options.cursorItem = 2;
               options.linesWidth = 1;
@@ -42,7 +40,6 @@
               options.normalItemsInterval = 10;
               options.dotItemsInterval = 10;
               options.lineItemsInterval = 10;
-              console.log(globalconsole);
               $("#basicdiagram").famDiagram(options);
 
 }
@@ -64,9 +61,15 @@ Parvar=frm1.elements["Parentsname"].value;
 Spovar=frm1.elements["Spousename"].value;
 Titvar=frm1.elements["Titlename"].value;
 Descvar=frm1.elements["Descriptionname"].value;
-console.log(IDvar);
+console.log("Our untouched entry values");
+console.log(Parvar);
+var array = JSON.parse("["+ Parvar +"]"); //We convert to array here.
+console.log("Our touched array is below:");
+console.log(array);
+console.log("Our untouched array is below,hand entered:");
+console.log(items[1].parents);
 
-items2.push({id:IDvar, parents:[Parvar],spouse:[Spovar],title:[Titvar], label: "", description: Descvar +" Personel ID:"+ IDvar, image: "" }); //Form'dan özellik alması için.
+items2.push({id:IDvar, parents:[array],spouse:[Spovar],title:[Titvar], label: "", description: Descvar +" Personel ID:"+ IDvar, image: "" }); //Form'dan özellik alması için.
 
               options.items = items2;
               options.cursorItem = 2;
@@ -79,7 +82,6 @@ items2.push({id:IDvar, parents:[Parvar],spouse:[Spovar],title:[Titvar], label: "
               options.normalItemsInterval = 10;
               options.dotItemsInterval = 10;
               options.lineItemsInterval = 10;
-              console.log(globalconsole);
 
               $("#basicdiagram").famDiagram(options);
 
